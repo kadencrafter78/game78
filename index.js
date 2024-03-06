@@ -68,6 +68,22 @@
             }
           };
         },
+        /**
+         * 
+         * @param {Object} pointA - A coordinate point
+         * @param {number} pointA.x - The x coordinate of point A
+         * @param {number} pointA.y - The y coordinate of point A
+         * @param {Object} pointB - A second coordinate point
+         * @param {number} pointB.x - The x coordinate of point B
+         * @param {number} pointB.y - The y coordinate of point B
+         * @returns - Distance between the two points calculated with the pythagorean theorem
+         */
+        calculateDistance: function(pointA, pointB) {
+          const distanceX = Math.abs(pointB.x - pointA.x);
+          const distanceY = Math.abs(pointB.y - pointA.y);
+          const distance = Math.sqrt((distanceX*distanceX)+(distanceY*distanceY));
+          return distance;
+        }
       },
     };
   }(window, window._));
