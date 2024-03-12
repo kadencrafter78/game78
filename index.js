@@ -1,9 +1,3 @@
-(function(window, _) {
-    window.game78 = window.game78 || {
-      numz: {},
-      phyz: {},
-    };
-  }(window, window._));
 
   // Implementation of makeBody() //
 
