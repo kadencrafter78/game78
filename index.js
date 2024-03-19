@@ -3,7 +3,37 @@
 
 (function(window, _) {
     window.game78 = window.game78 || {
-      numz: {/* other code */},
+      numz: {/* other code */
+      /**
+       * Returns the angle measurement formed by two lines in degrees
+       * 
+       * @param {Object} pointA: The first point that forms the angle
+       * @param {Object} pointB: The second point that forms the angle
+       */
+      getAngleDegrees(pointA, pointB){
+        const DistanceX = Math.abs(pointB.x - pointA.x);
+        const DistanceY = Math.abs(pointB.y - pointA.y);
+        const radians = Math.atan2(DistanceY, DistanceX);
+        const degrees = radians*180/Math.PI;
+        return degrees;
+      },
+      /**
+       * 
+       * @param {Num} degrees: The angle in degrees 
+       * @returns The angle in radians
+       */
+      degreesToRadians(degrees){
+        return degrees * Math.PI / 180;
+      },
+      /**
+       * @param {Num} radians: The angle in radians
+       * @returns The angle in degrees
+       */
+      radiansToDegrees(radians){
+        return radians * 180 / Math.PI;
+      }
+
+    },
       phyz: {
         /**
          * Returns an Object with basic properties utilized in a 
@@ -78,6 +108,7 @@
           const distance = Math.sqrt((distanceX*distanceX)+(distanceY*distanceY));
           return distance;
         }
+        
       },
     };
   }(window, window._));
